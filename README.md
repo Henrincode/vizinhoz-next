@@ -68,3 +68,17 @@ export default function Home() {
     )
 }
 ```
+
+## Banco de dados
+
+### Criando tabela `tb_usuarios`
+
+```sql
+create table vz_tb_usuarios (
+  id_usuario serial primary key,
+  nome varchar(100) not null,
+  email varchar(100) not null unique,
+  senha text not null,
+  data_criacao timestamp default current_timestamp
+);
+```
