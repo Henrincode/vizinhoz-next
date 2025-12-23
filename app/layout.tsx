@@ -1,7 +1,7 @@
 import "./globals.css"
 import { Inter } from 'next/font/google'
 
-import Header from '@/components/header'
+import NavBar from '@/components/NavBar'
 
 // Font padrão
 const fontInter = Inter({
@@ -21,8 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${fontInter.className}`}>
-      <body>
-        <Header />
+      <body className="
+        
+        min-h-dvh
+        bg-linear-60
+        from-blue-200
+        to-cyan-200
+      ">
+        <NavBar />
         {children}
       </body>
     </html>
