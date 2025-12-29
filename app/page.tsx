@@ -22,13 +22,22 @@ const catProfissionais = [
 export default async function Home() {
 
   return (
-    <div className='pt-2'>
-      <div className="box">
+    <div className=''>
+      {/* Boas vintas */}
+      <div className='box flex flex-col justify-center items-center pt-2 h-75'>
+        <h2 className='text-6xl font-bold'>Olá, vizinho 👋</h2>
+        <h3 className='text-2xl italic font-light text-gray-500 mt-2'>Encontre tudo o que precisa sem sair do condomínio.</h3>
+      </div>
+      {/* Filtors */}
+      
+
+
+
+      {/* <div className="box">
         <Destaques />
       </div>
       <div className=''>
         <div className='text-center text-5xl font-bold italic text-gray-500 mt-10'># Produtos</div>
-        {/* <div className="box"> */}
         <CatDestaq categorias={catProdutos} className="
           box
           xl-box
@@ -36,9 +45,7 @@ export default async function Home() {
           p-5
           xl:px-0
           " />
-          {/* <div className='box h-1 my-10 rounded-full bg-gray-500'></div> */}
         <div className='text-center text-5xl font-bold italic text-gray-500 mt-5'># Profissionais</div>
-        {/* <div className="box"> */}
         <CatDestaq categorias={catProfissionais} className="
           box
           xl-box
@@ -46,7 +53,7 @@ export default async function Home() {
           p-5
           xl:px-0
           " />
-      </div>
+      </div> */}
       <div className="m-10"></div>
     </div>
   )

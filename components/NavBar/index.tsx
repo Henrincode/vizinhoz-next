@@ -1,16 +1,23 @@
+import { FaBuilding } from "react-icons/fa";
+import { IoAddCircleOutline, IoLocationOutline } from "react-icons/io5";
 
 export default function NavBar() {
 
     return (
         <nav id="nav-bar" className="
-            [&_a]:block
+        bg-white
+        border-b
+        **:duration-300
+        border-black/20
+            [&_a]:flex
             [&_a]:py-2
             [&_a]:px-4
-            [&_a]:rounded-lg
+            [&_a]:rounded-full
             [&_a]:cursor-pointer
-            [&_a]:bg-white
-            [&_a]:hover:bg-amber-200
-            [&_a]:active:bg-amber-200
+            [&_a]:text-white
+            [&_a]:bg-blue-600
+            [&_a]:hover:bg-blue-900
+            [&_a]:active:bg-blue-900
             select-none
         ">
             <div id="nav-container" className="
@@ -24,20 +31,24 @@ export default function NavBar() {
                 justify-center
                 items-center
                 rounded-b-lg
-                bg-blue-500
             ">
                 <div id="nav-logo" className="
+                    flex
+                    flex-row
+                    items-center
+                    gap-1
                     py-4
                     sm:py-0
                     text-5xl
                     sm:text-3xl
                     font-bold
                     cursor-pointer
-                    text-white
-                    hover:text-amber-200
-                    active:text-amber-200
+                    text-blue-700
+                    hover:text-blue-900
+                    active:text-blue-900
+                    group
                 ">
-                    VIZINHOZ
+                    <FaBuilding className="bg-blue-600 group-hover:bg-blue-900 group-active:bg-blue-900 text-white p-2 rounded-lg" size={40} /> VIZINHOZ
                 </div>
 
                 <form action="" className="
@@ -46,35 +57,29 @@ export default function NavBar() {
                     flex-1
                     items-center
                 ">
-                    <input type="text" className="
+                    <input type="text" placeholder="🔍 O que você procura hoje?" className="
                         flex-1
                         p-2 min-w-32 w-full
-                        rounded-l-lg
+                        rounded-full
                         outline-none
-                        accent-amber-400
-                        caret-amber-500
-                        bg-white
-                        hover:bg-amber-200
-                        focus:bg-amber-300
+                        border
+                        border-gray-900/10
+                        accent-blue-400
+                        caret-blue-500
+                        bg-gray-100
+                        hover:bg-blue-200
+                        focus:bg-blue-300
                     "/>
-                    <button type="button" className="
-                        py-2
-                        px-4
-                        border-l
-                        rounded-r-lg
-                        cursor-pointer
-                        bg-amber-100
-                        border-l-blue-200
-                        hover:bg-amber-200
-                        active:bg-amber-200
-                        select-none
-                    "> Buscar </button>
                 </form>
 
-                <a href="#">Categorias</a>
+                <div className="flex flex-row text-gray-500 cursor-pointer hover:text-black group">
+                    <IoLocationOutline className="text-2xl text-blue-600 group-hover:text-green-600" /> Spazio Beach
+                </div>
 
                 <div id="nav-conta">
-                    <a href="#">Conta</a>
+                    <a href="#" className="flex-row  gap-1">
+                        <IoAddCircleOutline className="text-2xl" /> Anunciar
+                    </a>
                 </div>
             </div>
         </nav>

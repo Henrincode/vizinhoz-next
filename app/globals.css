@@ -16,5 +16,5 @@
 
 
 .teste {
-    background-color: red;
+    @apply bg-red-500/20 shadow-[inset_0_0_10px_red];
 }

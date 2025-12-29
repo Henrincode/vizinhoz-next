@@ -25,8 +25,8 @@ export default function RootLayout({
         
         min-h-dvh
         bg-linear-60
-        from-blue-200
-        to-cyan-200
+        from-gray-100
+        to-gray-200
       ">
         <NavBar />
         {children}
