@@ -40,45 +40,45 @@ export default function cadPrivado({ cat, tipo }: any) {
     // categorias
     useEffect(() => {
         if (stateCatCriar.success) {
-            router.push('/cad', { scroll: false })
+            
         }
     }, [stateCatCriar])
 
     useEffect(() => {
         if (stateCatEditar.success) {
             setInputCat('')
-            router.push('/cad', { scroll: false })
+            
         }
     }, [stateCatEditar])
 
     useEffect(() => {
         if (stateCatApagar.success) {
-            router.push('/cad', { scroll: false })
+            
         }
     }, [stateCatApagar])
 
     // tipos
     useEffect(() => {
         if (stateTipoCriar.success) {
-            router.push('/cad', { scroll: false })
+            
         }
     }, [stateTipoCriar])
 
     useEffect(() => {
-        if(stateTipoEditar.success) {
+        if (stateTipoEditar.success) {
             setInputTipo('')
-            router.push('/cad', {scroll: false})
+            
         }
-    },[stateTipoEditar])
+    }, [stateTipoEditar])
 
     useEffect(() => {
         if (stateTipoApagar.success) {
-            router.push('/cad', { scroll: false })
+            
         }
     }, [stateTipoApagar])
 
     return (
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 gap-2 h-250">
             <FormPrivado
                 lista={cat}
                 cadastrar={formCatCadastrar}
