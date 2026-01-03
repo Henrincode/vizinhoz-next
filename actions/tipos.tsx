@@ -37,7 +37,7 @@ export async function tipoCriar(prevState: ActionState, formData: FormData): Pro
       values (${nome}, '#')
     `
 
-    revalidatePath('/cat')
+    revalidatePath('/cad')
 
     return { success: true }
 
@@ -66,7 +66,7 @@ export async function tipoEditar(prevState: ActionState, formData: FormData): Pr
     where id_tipo = ${id}
     `
 
-    revalidatePath('/cat')
+    revalidatePath('/cad')
     return { success: true }
   } catch (error) {
     console.error(error)
@@ -83,7 +83,7 @@ export async function tipoApagar(prevState: ActionState, formData: FormData): Pr
       delete from vz_tb_tipos where id_tipo = ${id}
       
     `
-        revalidatePath('/cat')
+        revalidatePath('/cad')
         return {success: true}
     } catch (error) {
         console.error(error)

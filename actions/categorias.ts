@@ -37,7 +37,7 @@ export async function catCriar(prevState: ActionState, formData: FormData): Prom
       values (${nome}, '#')
     `
 
-    revalidatePath('/cat')
+    revalidatePath('/cad')
 
     return { success: true }
 
@@ -66,7 +66,7 @@ export async function catEditar(prevState: ActionState, formData: FormData): Pro
     where id_categoria = ${id}
     `
 
-    revalidatePath('/cat')
+    revalidatePath('/cad')
     return { success: true }
   } catch (error) {
     console.error(error)
@@ -83,7 +83,7 @@ export async function catApagar(prevState: ActionState, formData: FormData): Pro
       delete from vz_tb_categorias where id_categoria = ${id}
       
     `
-    revalidatePath('/cat')
+    revalidatePath('/cad')
     return { success: true }
   } catch (error) {
     console.error(error)
