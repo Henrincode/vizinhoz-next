@@ -14,6 +14,31 @@
     }
 }
 
+.scrollbar-clean::-webkit-scrollbar {
+    width: 13px;
+}
+
+.scrollbar-clean::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollbar-clean::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 9999px;
+
+    border: 4px solid transparent;
+    background-clip: padding-box;
+}
+
+.scrollbar-clean::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    cursor: default;
+}
+
+.scrollbar-clean::-webkit-scrollbar-button {
+    display: none;
+}
+
 
 .teste {
     box-shadow: inset 0 0 10px red;

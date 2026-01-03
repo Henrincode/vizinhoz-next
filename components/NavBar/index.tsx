@@ -1,84 +1,93 @@
+import Link from "next/link";
 import { FaBuilding } from "react-icons/fa";
-import { IoAddCircleOutline, IoLocationOutline } from "react-icons/io5";
+import { IoLocationOutline } from "react-icons/io5";
+import { RiAccountCircleFill, RiAccountCircleLine } from "react-icons/ri";
+import { TbShoppingBagPlus } from "react-icons/tb";
 
 export default function NavBar() {
 
     return (
         <nav id="nav-bar" className="
-        bg-white
-        border-b
-        **:duration-300
-        border-black/20
-            [&_a]:flex
-            [&_a]:py-2
-            [&_a]:px-4
-            [&_a]:rounded-full
-            [&_a]:cursor-pointer
-            [&_a]:text-white
-            [&_a]:bg-blue-600
-            [&_a]:hover:bg-blue-900
-            [&_a]:active:bg-blue-900
             select-none
+            border-b
+            bg-white
+            border-black/20
+            **:duration-300
+            
+            [&_.botao]:cursor-pointer
+            [&_.botao]:flex
+            [&_.botao]:px-4
+            [&_.botao]:py-2
+            [&_.botao]:rounded-full
+            [&_.botao]:text-white
+            [&_.botao]:bg-blue-600
+            [&_.botao]:hover:bg-blue-900
+            [&_.botao]:active:bg-blue-900
         ">
             <div id="nav-container" className="
                 box
-                py-2
-                px-4
                 flex
                 flex-row
-                flex-wrap
-                gap-2
                 justify-center
                 items-center
+                flex-wrap
+                gap-2
+                px-4
+                py-2
                 rounded-b-lg
             ">
-                <div id="nav-logo" className="
+                <Link id="nav-logo" href={'/'} className="
+                    cursor-pointer
                     flex
                     flex-row
                     items-center
                     gap-1
                     py-4
-                    sm:py-0
                     text-5xl
-                    sm:text-3xl
                     font-bold
-                    cursor-pointer
                     text-blue-700
                     hover:text-blue-900
                     active:text-blue-900
+                    sm:py-0
+                    sm:text-3xl
                     group
                 ">
-                    <FaBuilding className="bg-blue-600 group-hover:bg-blue-900 group-active:bg-blue-900 text-white p-2 rounded-lg" size={40} /> VIZINHOZ
-                </div>
+                    <FaBuilding className="p-2 rounded-lg text-white bg-blue-600 group-hover:bg-blue-900 group-active:bg-blue-900" size={40} /> VIZINHOZ
+                </Link>
 
                 <form action="" className="
+                    flex-1
                     flex
                     flex-row
-                    flex-1
                     items-center
                 ">
                     <input type="text" placeholder="🔍 O que você procura hoje?" className="
                         flex-1
-                        p-2 min-w-32 w-full
+                        min-w-50
+                        w-full
+                        p-2
+                        border
                         rounded-full
                         outline-none
-                        border
                         border-gray-900/10
-                        accent-blue-400
-                        caret-blue-500
                         bg-gray-100
                         hover:bg-blue-200
                         focus:bg-blue-300
+                        accent-blue-400
+                        caret-blue-500
                     "/>
                 </form>
 
-                <div className="flex flex-row text-gray-500 cursor-pointer hover:text-black group">
+                <div className="flex flex-row text-gray-500 hover:text-black cursor-pointer group">
                     <IoLocationOutline className="text-2xl text-blue-600 group-hover:text-green-600" /> Spazio Beach
                 </div>
 
-                <div id="nav-conta">
-                    <a href="#" className="flex-row  gap-1">
-                        <IoAddCircleOutline className="text-2xl" /> Anunciar
+                <div id="nav-conta" className="flex flex-row gap-2">
+                    <Link href="/anunciar" className="botao flex-row items-center gap-1">
+                        <TbShoppingBagPlus className="text-2xl" /> Anunciar
+                    </Link>
+                    <a href="#" className="botao flex-row items-center gap-1">
+                        <RiAccountCircleLine className="text-2xl" /> Entrar
                     </a>
                 </div>
             </div>

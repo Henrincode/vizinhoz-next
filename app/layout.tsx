@@ -21,13 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${fontInter.className}`}>
-      <body className="
-        
-        min-h-dvh
-        bg-linear-60
-        from-gray-100
-        to-gray-200
-      ">
+      <body className="min-h-dvh bg-linear-60 from-gray-100 to-gray-200">
         <NavBar />
         {children}
       </body>
