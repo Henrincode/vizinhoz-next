@@ -1,9 +1,16 @@
-import CadAnuncio from "@/components/Forms/Cad/Anuncio"
+import { catTudo } from "@/actions/categorias";
+import { tipoTudo } from "@/actions/tipos";
+import CadAnuncio from "@/components/Forms/Cad/Anuncio";
 
-export default function Anunciar() {
+
+export default async function Anunciar() {
+    
+    const cat = await catTudo()
+    const tipo = await tipoTudo()
+    
     return (
         <div>
-            <CadAnuncio />
+            <CadAnuncio cat={cat} tipo={tipo}  />
         </div>
     )
 }

@@ -40,45 +40,45 @@ export default function CadPrivado({ cat, tipo }: any) {
     // categorias
     useEffect(() => {
         if (stateCatCriar.success) {
-            
+            setInputCat('')
         }
     }, [stateCatCriar])
 
     useEffect(() => {
         if (stateCatEditar.success) {
             setInputCat('')
-            
+
         }
     }, [stateCatEditar])
 
     useEffect(() => {
         if (stateCatApagar.success) {
-            
+
         }
     }, [stateCatApagar])
 
     // tipos
     useEffect(() => {
         if (stateTipoCriar.success) {
-            
+            setInputTipo('')
         }
     }, [stateTipoCriar])
 
     useEffect(() => {
         if (stateTipoEditar.success) {
             setInputTipo('')
-            
+
         }
     }, [stateTipoEditar])
 
     useEffect(() => {
         if (stateTipoApagar.success) {
-            
+
         }
     }, [stateTipoApagar])
 
     return (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormPrivado
                 lista={cat}
                 cadastrar={formCatCadastrar}
@@ -93,6 +93,7 @@ export default function CadPrivado({ cat, tipo }: any) {
                 titulo="Criar nova categoria"
                 label="Titulo da categoria"
             />
+            <div className="md:hidden my-4 p-1 bg-gray-500 rounded-full"></div>
             <FormPrivado
                 lista={tipo}
                 tabela="tipo"

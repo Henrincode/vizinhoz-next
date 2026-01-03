@@ -5,7 +5,7 @@ import { IoPricetagsSharp } from "react-icons/io5";
 import { MdCategory, MdOutlineCategory, MdOutlineLabel } from "react-icons/md";
 import { TbLabelFilled, TbShoppingBagPlus } from "react-icons/tb";
 
-export default function CadAnuncio() {
+export default function CadAnuncio({cat, tipo}: any) {
     return (
         <form className="max-w-200 mt-10 mx-auto p-2 ">
             <div className="flex flex-col items-center p-4 rounded-t-2xl text-white bg-blue-600">
@@ -64,22 +64,19 @@ export default function CadAnuncio() {
                         <label htmlFor="categoria"><MdCategory /> Categoria</label>
                         <select id="categoria" className="campo" name="categoria" defaultValue="selecione">
                             <option disabled value="selecione">Selecione...</option>
-                            <option value="bolos">Bolos</option>
-                            <option value="lanches">&nbsp;&nbsp;&nbsp;&nbsp;Lanches</option>
-                            <option value="salgados">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Salgados</option>
+                            {cat && cat.map((c: any, i: number) => (
+                                <option key={i} value={c.id_categoria}>{c.nome}</option>
+                            ))}
                         </select>
                     </div>
                     {/* tipo */}
                     <div className="fGrupo">
                         <label htmlFor="tipo"><TbLabelFilled /> Tipo</label>
-                        <select id="tipo" className="campo" name="tipo" defaultValue="servicos">
-                            <option value="selecione" className="text-gray-400">Selecione...</option>
-                            <option value="servico">{'(Serviço) - Faço tal serviço'}</option>
-                            <option value="venda">{'(Venda) - Estou vendendo'}</option>
-                            <option value="aluguel">(Aluguel) - Estou alugando</option>
-                            <option value="troca">{'(Troca) - Troco por alguma coisa'}</option>
-                            <option value="doacao">{'(Doação) - Estou doando'}</option>
-                            <option value="precisando">{'(Precisando) - Preciso / procuro'}</option>
+                        <select id="tipo" className="campo" name="tipo" defaultValue="selecione">
+                            <option disabled value="selecione">Selecione...</option>
+                            {tipo && tipo.map((t: any, i: number) => (
+                                <option key={i} value={t.id_tipo}>{t.nome}</option>
+                            ))}
                         </select>
                     </div>
                     {/* perço */}
