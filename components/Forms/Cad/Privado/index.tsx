@@ -17,7 +17,7 @@ const initialState: ActionState = {
     success: false,
 }
 
-export default function cadPrivado({ cat, tipo }: any) {
+export default function CadPrivado({ cat, tipo }: any) {
     const router = useRouter()
 
     const [editandoCat, setEditandoCat] = useState(false)
@@ -78,7 +78,7 @@ export default function cadPrivado({ cat, tipo }: any) {
     }, [stateTipoApagar])
 
     return (
-        <div className="grid grid-cols-2 gap-2 h-250">
+        <div className="grid grid-cols-2 gap-4">
             <FormPrivado
                 lista={cat}
                 cadastrar={formCatCadastrar}

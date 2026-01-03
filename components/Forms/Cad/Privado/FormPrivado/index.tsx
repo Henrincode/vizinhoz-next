@@ -50,13 +50,15 @@ export default function FormPrivado({ cadastrar, editar, apagar, lista, titulo, 
                         ">
                     {/* título */}
                     <div className="fGrupo">
-                        <label htmlFor="titulo"><FaEdit /> {label}</label>
-                        <input id="titulo" name="titulo" className="campo" type="text" defaultValue={editando ? input : ''} placeholder="Insira o nome da categoria" />
+                        <label><FaEdit /> {label}</label>
+                        {/* <input name="titulo" className="campo" type="text" defaultValue={editando ? input : ''} placeholder="Insira o nome da categoria" /> */}
+                        <input name="titulo" className="campo" type="text" value={input} onChange={(e) => setInput(e.currentTarget.value)} placeholder="Insira o nome da categoria" />
                         <input type="text" name='id' hidden defaultValue={id} />
                     </div>
 
                     <div className="fLinha justify-center">
                         <button className="p-2 rounded-xl text-white bg-blue-600 hover:bg-blue-900 cursor-pointer">{editando ? 'Alterar categoria' : 'Cadastrar categoria'}</button>
+                        {editando && <button type="button" onClick={() => {setInput(''); setEditando(false)}} className="p-2 rounded-xl text-white bg-blue-600 hover:bg-blue-900 cursor-pointer">Cancelar</button>}
                     </div>
 
                 </div>
@@ -67,8 +69,8 @@ export default function FormPrivado({ cadastrar, editar, apagar, lista, titulo, 
                     <form action={apagar} key={i} className="flex flex-row">
                         <span className="px-2 rounded-l-full bg-blue-500">{c.nome}</span>
                         <input name="id" type="text" hidden defaultValue={!tabela ? c.id_categoria : c.id_tipo} />
-                        <span className="px-2 bg-amber-300 cursor-pointer" onClick={() => {setEditando(true); setInput(c.nome); setId(!tabela ? c.id_categoria : c.id_tipo)}}>E</span>
-                        <button className="px-2 rounded-r-full bg-red-500">X</button>
+                        <span className="flex flex-row items-center px-2 bg-amber-300 hover:bg-amber-600 cursor-pointer" onClick={() => {setEditando(true); setInput(c.nome); setId(!tabela ? c.id_categoria : c.id_tipo)}}><FaEdit /></span>
+                        <button className="px-2 rounded-r-full bg-red-500 hover:bg-red-800 cursor-pointer">X</button>
                     </form>
                 ))}
             </div>
