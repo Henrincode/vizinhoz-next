@@ -4,7 +4,7 @@ import { catCriar, catEditar, catApagar } from "@/actions/categorias";
 import { tipoCriar, tipoEditar, tipoApagar } from "@/actions/tipos";
 
 import { useActionState, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+
 import FormPrivado from "./FormPrivado";
 
 type ActionState = {
@@ -18,7 +18,6 @@ const initialState: ActionState = {
 }
 
 export default function CadPrivado({ cat, tipo }: any) {
-    const router = useRouter()
 
     const [editandoCat, setEditandoCat] = useState(false)
     const [inputCat, setInputCat] = useState('')

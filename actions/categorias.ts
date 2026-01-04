@@ -30,7 +30,7 @@ export async function catTudo() {
   }
 }
 
-export async function catCriar(prevState: ActionState, formData: FormData): Promise<ActionState> {
+export async function catCriar(prevState: any, formData: any) {
 
   const nome = formData.get('titulo')
 
