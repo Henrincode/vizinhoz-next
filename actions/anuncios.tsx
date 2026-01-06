@@ -50,11 +50,11 @@ export async function anuCriar(prevState: any, formData: any) {
     const categoria = Number(formData.get('categoria'))
     const tipo = Number(formData.get('tipo'))
     const preco = Number(formData.get('preco'))
+    const precoFinal = preco <= 0 ? null : preco
 
     const titulo = formData.get('titulo')
     const descricao = formData.get('descricao')
 
-    console.log('parte 1')
     console.log(formData)
     if (
         !usuario ||
@@ -69,10 +69,9 @@ export async function anuCriar(prevState: any, formData: any) {
 
 
     try {
-        console.log('parte 2')
         await sql`
       insert into vz_tb_anuncios (id_usuario_fk, id_categoria_fk, id_tipo_fk, titulo, preco, descricao)
-      values (${usuario}, ${categoria}, ${tipo}, ${titulo}, ${preco}, ${descricao})
+      values (${usuario}, ${categoria}, ${tipo}, ${titulo}, ${precoFinal}, ${descricao})
     `
 
         limparRotas()

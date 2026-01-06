@@ -135,20 +135,20 @@ export default function CadAnuncio({ anuncios, cat, tipo }: any) {
                         [&_li]:p-2
                         [&_li]:rounded-full
                         [&_li]:bg-gray-300
-                        [&_.divisor]:p-0.5
+                        [&_.divisor]:h-0.5
                         [&_.divisor]:rounded-full
-                        [&_.divisor]:bg-gray-300
+                        [&_.divisor]:bg-gray-500
 
 
                         ">
                         <div className="flex flex-row gap-4">
                             <div className="flex-1 flex flex-row justify-center items-center min-h-16 border-2 rounded-xl border-gray-500 text-xl text-center bg-gray-200">{a.titulo}</div>
-                            <form action={formAnuApagar} className="overflow-auto flex justify-center items-center w-20 rounded-xl border-2 border-gray-500 bg-red-500 text-white text-4xl">
+                            <form action={formAnuApagar} className="overflow-auto flex justify-center items-center w-20 rounded-xl border-2 border-gray-500 bg-red-500 hover:bg-red-800 text-white text-4xl">
                                 <input name="id" type="number" defaultValue={a.id_anuncio} hidden />
-                                <button className="flex justify-center items-center size-full"><GoTrash /></button>
+                                <button className="flex justify-center items-center size-full cursor-pointer    "><GoTrash /></button>
                                 </form>
                         </div>
-                        <div className="overflow-auto h-50 px-1 border rounded-xl text-justify bg-gray-200 hyphens-auto whitespace-pre-line scrollbar-clean">{a.descricao}</div>
+                        <div className="overflow-auto h-50 px-1 border-2 border-gray-500 rounded-xl text-justify bg-gray-200 hyphens-auto whitespace-pre-line scrollbar-clean">{a.descricao}</div>
                         <ul>
                             <li>{a.categoria}</li>
                             <li>{a.tipo}</li>
@@ -165,7 +165,7 @@ export default function CadAnuncio({ anuncios, cat, tipo }: any) {
                         </ul>
                         <div className="divisor"></div>
                         <ul>
-                            <li>{"R$"}{a.preco}</li>
+                            <li className={a.preco || "hidden"}>{"R$"}{a.preco}</li>
                             <li>{new Date(a.data_criacao).toLocaleString("pt-BR")}</li>
                         </ul>
 

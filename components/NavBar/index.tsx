@@ -86,9 +86,9 @@ export default function NavBar() {
                     <Link href="/anunciar" className="botao flex-row items-center gap-1">
                         <TbShoppingBagPlus className="text-2xl" /> Anunciar
                     </Link>
-                    <a href="#" className="botao flex-row items-center gap-1">
+                    <Link href="/logar" className="botao flex-row items-center gap-1">
                         <RiAccountCircleLine className="text-2xl" /> Entrar
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>
