@@ -10,7 +10,7 @@ function limparRotas() {
 export async function anuTudo() {
     try {
         const rows = await sql`
-            select
+            SELECT
             an.id_anuncio,
             an.titulo,
             an.descricao,
@@ -26,15 +26,15 @@ export async function anuTudo() {
             us.apartamento,
             co.id_condominio,
             co.nome condominio
-            from vz_tb_anuncios an
-            inner join vz_tb_categorias ca
-            on an.id_categoria_fk = ca.id_categoria
-            inner join vz_tb_tipos ti
-            on an.id_tipo_fk = ti.id_tipo
-            inner join vz_tb_usuarios us
-            on an.id_usuario_fk = us.id_usuario
-            inner join vz_tb_condominios co
-            on co.id_condominio = us.id_condominio_fk
+            FROM vz_tb_anuncios an
+            INNER JOIN vz_tb_categorias ca
+            ON an.id_categoria_fk = ca.id_categoria
+            INNER JOIN vz_tb_tipos ti
+            ON an.id_tipo_fk = ti.id_tipo
+            INNER JOIN vz_tb_usuarios us
+            ON an.id_usuario_fk = us.id_usuario
+            INNER JOIN vz_tb_condominios co
+            ON co.id_condominio = us.id_condominio_fk
         `
         return rows
     } catch (error) {
@@ -42,7 +42,6 @@ export async function anuTudo() {
         return []
     }
 }
-
 
 export async function anuCriar(prevState: any, formData: any) {
 
@@ -70,12 +69,10 @@ export async function anuCriar(prevState: any, formData: any) {
 
     try {
         await sql`
-      insert into vz_tb_anuncios (id_usuario_fk, id_categoria_fk, id_tipo_fk, titulo, preco, descricao)
-      values (${usuario}, ${categoria}, ${tipo}, ${titulo}, ${precoFinal}, ${descricao})
-    `
-
+            INSERT into vz_tb_anuncios (id_usuario_fk, id_categoria_fk, id_tipo_fk, titulo, preco, descricao)
+            VALUES (${usuario}, ${categoria}, ${tipo}, ${titulo}, ${precoFinal}, ${descricao})
+        `
         limparRotas()
-
         return { success: true }
 
     } catch (error) {
@@ -88,19 +85,15 @@ export async function anuApagar(prevState: any, formData: any) {
 
     const id = Number(formData.get('id'))
 
-    console.log("foi", id)
-    
     try {
-    await sql`
-      delete from vz_tb_anuncios where id_anuncio = ${id}
-      
-    `
-    console.log("passou do banco")
-    limparRotas()
-    return { success: true }
-  } catch (error) {
-    console.error(error)
-    return { error: 'nao foi' }
-  }
+        await sql`
+            DELETE FROM vz_tb_anuncios WHERE id_anuncio = ${id}
+        `
+        limparRotas()
+        return { success: true }
+    } catch (error) {
+        console.error(error)
+        return { error: 'nao foi' }
+    }
 }
 
