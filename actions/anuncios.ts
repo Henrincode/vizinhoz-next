@@ -37,8 +37,8 @@ export async function anuTudo() {
             ON co.id_condominio = us.id_condominio_fk
         `
         return rows
-    } catch (error) {
-        console.log(error)
+    } catch (error: any) {
+        console.log(error.message)
         return []
     }
 }

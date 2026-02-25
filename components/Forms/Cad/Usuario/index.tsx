@@ -93,7 +93,7 @@ export default function FormUsuario() {
                         <input className="campo" name="pass2" type="password" value={pass2} onChange={(e) => setPass2(e.currentTarget.value)} />
                     </div>
                 </div>
-                <div className="text-center text-red-600">{passOk || 'As senhas deve ser identicas'}</div>
+                <div className={`py-1 rounded-full font-bold text-center text-red-600 bg-amber-50 ${passOk && "hidden"}`}>{passOk || 'As senhas deve ser identicas'}</div>
                 <div className="fGrupo">
                     <label htmlFor=""><FaLock /> E-Mail *</label>
                     <input className="campo" name="email" type="email" placeholder="meu@email.com.br" />

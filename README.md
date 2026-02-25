@@ -153,3 +153,90 @@ ADD CONSTRAINT fk_tipo FOREIGN KEY (id_tipo_fk) REFERENCES vz_tb_tipo (id_tipo);
 ALTER TABLE vz_tb_anuncios
 ADD CONSTRAINT fk_categoria FOREIGN KEY (id_categoria_fk) REFERENCES vz_tb_categorias (id_categoria);
 ```
+
+
+
+
+
+
+
+
+
+
+---
+
+## Bibliotecas instaladas
+
+### React Icons
+
+Biblioteca com uma grande variedade de ícones prontos para uso em aplicações React.
+
+**Documentação:**
+[https://react-icons.github.io/react-icons/](https://react-icons.github.io/react-icons/)
+
+**Instalação:**
+
+```bash
+npm i react-icons
+```
+
+---
+
+### Postgres (postgres.js)
+
+Cliente moderno e performático para conexão com banco de dados PostgreSQL no Node.js, com foco em simplicidade e segurança contra SQL Injection.
+
+**Documentação:**
+[https://github.com/porsager/postgres](https://github.com/porsager/postgres)
+
+**Instalação:**
+
+```bash
+npm i postgres
+```
+
+---
+
+### bcryptjs
+
+Biblioteca usada para gerar **hash de senhas**, garantindo que as senhas não sejam armazenadas em texto puro no banco de dados.
+
+**Documentação:**
+[https://github.com/dcodeIO/bcrypt.js](https://github.com/dcodeIO/bcrypt.js)
+
+**Instalação:**
+
+```bash
+npm i bcryptjs
+```
+
+---
+
+### jsonwebtoken
+
+Biblioteca utilizada para criar e validar **tokens JWT**, muito comum em sistemas de autenticação e controle de sessão.
+
+**Documentação:**
+[https://github.com/auth0/node-jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+
+**Instalação:**
+
+```bash
+npm i jsonwebtoken
+npm i -D @types/jsonwebtoken
+```
+
+---
+
+### cookie
+
+Biblioteca leve para **ler, criar e manipular cookies** no Node.js, muito usada em sistemas de autenticação para armazenar tokens de sessão (como JWT) de forma segura.
+
+**Documentação:**
+[https://github.com/jshttp/cookie](https://github.com/jshttp/cookie)
+
+**Instalação:**
+
+```bash
+npm i cookie
+```

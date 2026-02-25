@@ -1,46 +1,57 @@
-import sql from '@/lib/db'
+import sql from "@/lib/db"
 
+// find
 export async function find() {
   const rows = await sql`
-    select id_categoria, nome
-    from vz_tb_categorias
+    select id_category, name
+    from vz_tb_categories
   `
   return rows
 }
 
+// findByName
 export async function findByName(name: string) {
   const rows = await sql`
-    select id_categoria, nome
-    from vz_tb_categorias
-    where lower(nome) = ${name.toLowerCase()}
+    select id_category, name
+    from vz_tb_categories
+    where lower(name) = ${name.toLowerCase()}
   `
   return rows
 }
 
+// create
 export async function create(name: string) {
 
   const existingCategory = await findByName(name)
   if (existingCategory.length) throw new Error('Nome já existe')
 
-  await sql`
-    insert into vz_tb_categorias (nome, img)
+  const [data] = await sql`
+    insert into vz_tb_categories (name, img)
     values (${name}, '#')
+    returning *
   `
+  return data
 }
 
+// update
 export async function update(id: number, name: string) {
-  await sql`
-    update vz_tb_categorias
-    set nome = ${name}
-    where id_categoria = ${id}
+  const [data] = await sql`
+    update vz_tb_categories
+    set name = ${name}
+    where id_category = ${id}
+    returning *
   `
+  return data
 }
 
+// remove
 export async function remove(id: number) {
-  await sql`
-    delete from vz_tb_categorias
-    where id_categoria = ${id}
+  const [data] = await sql`
+    delete from vz_tb_categories
+    where id_category = ${id}
+    returning *
   `
+  return data
 }
 
 const categoryService = {
